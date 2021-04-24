@@ -1,6 +1,18 @@
-# My Dapp
+# Public Domain NFTs
 
-This project is for the blockchain application My Dapp. It contains code for the Smart Contract, web-based dapp and NodeJS server. 
+Slide: https://docs.google.com/presentation/d/16-Lmufid101TRkppRRLNbfnrXoaCDcxexFRvy4pJok0/edit?usp=sharing
+
+This project is a submission to [Mini NFT Hackathon](https://github.com/decentology/conflux-mini-nft-hackathon).
+
+-----
+
+<img width="869" alt="スクリーンショット 2021-04-24 23 12 01" src="https://user-images.githubusercontent.com/10495516/115965091-713af780-a562-11eb-87e3-9a708a95b12a.png">
+
+<img width="870" alt="スクリーンショット 2021-04-25 0 18 44" src="https://user-images.githubusercontent.com/10495516/115965014-1acdb900-a562-11eb-9c38-d193e0831a48.png">
+
+<img width="862" alt="スクリーンショット 2021-04-25 0 18 58" src="https://user-images.githubusercontent.com/10495516/115965019-1ef9d680-a562-11eb-85d5-ff6ebf0a140f.png">
+
+-----
 
 # Pre-requisites
 
