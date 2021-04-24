@@ -4,7 +4,6 @@ Slide: https://docs.google.com/presentation/d/16-Lmufid101TRkppRRLNbfnrXoaCDcxex
 
 This project is a submission to [Mini NFT Hackathon](https://github.com/decentology/conflux-mini-nft-hackathon).
 
------
 
 <img width="869" alt="スクリーンショット 2021-04-24 23 12 01" src="https://user-images.githubusercontent.com/10495516/115965091-713af780-a562-11eb-87e3-9a708a95b12a.png">
 
