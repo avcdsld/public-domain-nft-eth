@@ -48,6 +48,10 @@ export default class PageLoader extends LitElement {
       let modulePage = pageItem.name.replace(pagePrefix, ''); // Removes the module source
       if (modulePage === 'dapp') {
         await import(`../pages/${modulePage}.js`);
+      } else if (modulePage === 'create') {
+        await import(`../pages/create/${modulePage}.js`);
+      } else if (modulePage === 'gallery') {
+        await import(`../pages/gallery/${modulePage}.js`);
       } else if (modulePage === 'harness') {
         await import(`../pages/harness/${modulePage}.js`);
       } else {

@@ -46,6 +46,9 @@ contract DappState is IDappState
     // Used as the URI for all token types by relying on ID substitution, e.g. https://token-cdn-domain/{id}.json
     string private uri;
 
+    // Mapping from account to token IDs (This is a temporary experimental implementation and will not scale)
+    mapping (address => uint256[]) private ownerToTokenIDs;
+
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>> ACCESS CONTROL: ADMINISTRATOR ROLE  <<<<<<<<<<<<<<<<<<<<<<<<<<*/
     // Track authorized admins count to prevent lockout
     uint256 private authorizedAdminsCount = 1;                      
@@ -300,6 +303,30 @@ contract DappState is IDappState
     }
 
     /**
+     * @dev tokenIDs (This is a temporary experimental implementation and will not scale)
+     */
+    function tokenIDs(address account) public view returns (uint256[] memory) {
+        require(account != address(0), "ERC1155: owner query for the zero address");
+        return ownerToTokenIDs[account];
+    }
+
+    // /**
+    //  * @dev mintPublicDomainNFT (Anyone can mint)
+    //  */
+    function mintPublicDomainNFT(address account, uint256 id, uint256 amount, bytes memory data) external virtual {
+        require(account != address(0), "ERC1155: mint to the zero address");
+
+        address operator = msgSender();
+
+        beforeTokenTransfer(operator, address(0), account, asSingletonArray(id), asSingletonArray(amount), data);
+
+        balances[id][account] += amount;
+        emit TransferSingle(operator, address(0), account, id, amount);
+
+        doSafeTransferAcceptanceCheck(operator, address(0), account, id, amount, data);
+    }
+
+    /**
      * @dev Creates `amount` tokens of token type `id`, and assigns them to `account`.
      *
      * Emits a {TransferSingle} event.
@@ -428,7 +455,15 @@ contract DappState is IDappState
     )
         internal
         virtual
-    { }
+    {
+        // Note: This implementation is incomplete and is a temporary way to get a list of tokenIDs without having to do any event fetching.
+        for (uint i = 0; i < ids.length; i++) {
+            uint256 id = ids[i];
+            if (to != address(0)) {
+                ownerToTokenIDs[to].push(id);
+            }
+        }
+    }
 
     function doSafeTransferAcceptanceCheck(
         address operator,

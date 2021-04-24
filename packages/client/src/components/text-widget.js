@@ -25,7 +25,7 @@ export default class TextWidget extends LitElement {
         <input
           type="text"
           data-field="${this.field}"
-          class="shadow-inner appearance-none border rounded rounded-l-none w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow-inner appearance-none border rounded rounded-l-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="${this.placeholder}"
         />
       </div>

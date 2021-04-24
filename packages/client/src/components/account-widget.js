@@ -42,7 +42,7 @@ export default class AccountWidget extends LitElement {
   render() {
     this.classList.add("mb-3", "w-full", "block");
     let content = html`
-      <div class="mb-4 w-1/2">
+      <div class="mb-4">
         <div class="row">
           <div class="row pt-5">
             <label class="block text-gray-700 text-sm font-bold mb-2">

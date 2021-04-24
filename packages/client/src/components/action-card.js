@@ -11,6 +11,8 @@ export default class ActionCard extends LitElement {
   @property({ type: String })
   fields = null;
   @property({ type: String })
+  text = null;
+  @property({ type: String })
   message = null;
   @property({ type: String })
   return = null;
@@ -52,10 +54,10 @@ export default class ActionCard extends LitElement {
       } else {
         if (this.method === "get" || this.method === 'post') {
           let existing = this.querySelectorAll(
-            `#card-body-${this.action} .note`
+            `#card-body-result-${this.action} .note`
           );
           existing.forEach(el => el.setAttribute("style", "opacity:0.5;"));
-          this.querySelector(`#card-body-${this.action}`).append(e.detail.node);
+          this.querySelector(`#card-body-result-${this.action}`).append(e.detail.node);
         } else {
           if (this.target) {
             let targetPanel = document.getElementById(this.target);
@@ -71,36 +73,29 @@ export default class ActionCard extends LitElement {
 
   render() {
     return html`
-      <div class="shadow rounded-md bg-white mb-10 p-1">
+      <div class="shadow rounded-md bg-white mt-10 p-1">
         <div
-          class="text-white p-3 bg-blue-400 flex justify-between items-center rounded-md rounded-b-none"
+          class="text-white p-3 bg-gray-500 flex justify-between items-center rounded-md rounded-b-none"
         >
           <h5 class="font-bold">${this.title}</h5>
         </div>
-        <div
-          class="slot ${this.innerHTML.indexOf("<") > -1 ? "p-3" : ""}"
-          id="card-body-${this.action}"
-        ></div>
-        <div class="bg-gray-300 p-1 rounded-md rounded-t-none">
-          <div class="p-2 flex items-center justify-between">
-            <wait-widget
-              size="50"
-              title="${this.description}"
-              waiting-title="${this.message || "Waiting for transaction"}"
-            ></wait-widget>
+        <div class="p-2 flex items-center justify-between">
+          <div class="slot" id="card-body-${this.action}"></div>
             <div class="button-container text-right">
               <action-button
                 source="#${this.id}"
                 action="${this.action}"
                 method="${this.method}"
                 fields="${this.fields || ""}"
+                text="${this.text || ""}"
                 return="${this.return}"
                 .click=${this.handleClick}
               />
-            </div>
           </div>
         </div>
       </div>
+
+      <div id="card-body-result-${this.action}"></div>
     `;
   }
 }

@@ -23,10 +23,20 @@ export default class TopNavigation extends LitElement {
         route: "/"
       },
       {
-        name: "harness",
-        title: "UI Harness",
-        route: "/harness"
-      }
+        name: "create",
+        title: "Create",
+        route: "/create"
+      },
+      {
+        name: "gallery",
+        title: "Gallery",
+        route: "/gallery"
+      },
+      // {
+      //   name: "harness",
+      //   title: "UI Harness",
+      //   route: "/harness"
+      // }
     ];
     return staticPages;
   }

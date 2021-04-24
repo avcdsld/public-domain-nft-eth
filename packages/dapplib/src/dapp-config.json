@@ -1,0 +1,70 @@
+{
+	"httpUri": "https://test.confluxrpc.org/v2",
+	"wsUri": "wss://test.confluxrpc.org/v2",
+	"dappStateContractAddress": "0x8FF827654d05D382C0F2b5B684290989699bE2Bd",
+	"dappContractAddress": "0x842277ff2589537150Ac2ac9b0a5aa198d3802eF",
+	"accounts": [
+		"cfxtest:aapgc09jbgv6fuk0uw2xy0epubhnubyy7awugzk02t",
+		"cfxtest:aatv6u3uhcgu30nubrbvj5tazsr2ytsuu6ynjuvrc0",
+		"cfxtest:aapcashyn3b6bkr3frk2ksnguf6uv6m4we5pdyeuet",
+		"cfxtest:aapfvse0pcfaftf66wwtgffvgndjnmmpfufsb9rcvs",
+		"cfxtest:aakttkbm7vat6xxtvmxsw3zknbdjrrcyzpympy34c4",
+		"cfxtest:aatv6sdct0v5exdf5bd38j28pefz62dje6az40vh3m",
+		"cfxtest:aantkr57nnf63e6c1up7z7cm70g4fp3x9j3t0z9dab",
+		"cfxtest:aam399e7ww6vps0cz01xrtcy7j687h3zeptn13dcts",
+		"cfxtest:aajg434egc1hmfkg1b06yu6czsyu7vscjyta0fks5m",
+		"cfxtest:aang0eg32d1jzgkfgef171zgxbbfeupb7udt7tb4hh"
+	],
+	"wallets": [
+		{
+			"account": "cfxtest:aapgc09jbgv6fuk0uw2xy0epubhnubyy7awugzk02t",
+			"publicKey": "0x18828f3308ef9b32919a866efdae86b1659c73892b76e0e189ce1d55b2f52661fd0943b6721a507c5a2a556e530b532f24196f85f90f3ecc260c901dfde0fc9f",
+			"privateKey": "0xc22f47f61e455c876d62d97ca4d3b6077050231a9b5bec650233767704f40189"
+		},
+		{
+			"account": "cfxtest:aatv6u3uhcgu30nubrbvj5tazsr2ytsuu6ynjuvrc0",
+			"publicKey": "0xfe3ced0b0a7c97e679c1156bea3e4e09615f5185985649257bb08b9147745d549c9d22cb9af8269b3858ebe13106ab74d1b7d64fa009ccee98b30e3da318160c",
+			"privateKey": "0x16393614e8d3163c11cdf1bb8ad08c8b0a637189dc5c673f5d292c3a83552107"
+		},
+		{
+			"account": "cfxtest:aapcashyn3b6bkr3frk2ksnguf6uv6m4we5pdyeuet",
+			"publicKey": "0x47beb3f6fe1715528cf0d76d582e344ec97af669c59da2c406f76b1b9f169e084517b59ade7d0b9a5afdded7e8302b0a80f235f2b8e7a86730ff06d73b838749",
+			"privateKey": "0xc507880d2d90967330f528078cf56d49428556cc6afe0fc422da2b4dcc69cecb"
+		},
+		{
+			"account": "cfxtest:aapfvse0pcfaftf66wwtgffvgndjnmmpfufsb9rcvs",
+			"publicKey": "0x1dd655eaf7deaa5e23f744556ebc85861225523cba2ac570aa79b4c3e492eeb2dd6796106adfee7da1c00f03ef6ead9ba765eec17ab514accdc1661e03ca6b53",
+			"privateKey": "0x9915b6abbb66879b22fd6e2616b99555e7330bcff7ce9a9f18e6f73a359c50a0"
+		},
+		{
+			"account": "cfxtest:aakttkbm7vat6xxtvmxsw3zknbdjrrcyzpympy34c4",
+			"publicKey": "0x6fa0962d8d2ee562205881ad87c147fb216866ab145e51d67614cc45cf14308911520595be02a70d3e8cd70a91a0daec6e4bb59dae315fa57596b5aad2108e17",
+			"privateKey": "0xfa489812ba5387f9b06f65d17f16a12081dd8b0ceb050f56150cfc41461081ae"
+		},
+		{
+			"account": "cfxtest:aatv6sdct0v5exdf5bd38j28pefz62dje6az40vh3m",
+			"publicKey": "0x9a3b3832c1195d151af6993c6b8102a331fbea9a718ac6c811e971c0c80500dd9f738727c8de129c0a80026a7db8043371590bf50b554f19f559a3b65e5a6c0a",
+			"privateKey": "0xb056467384ae658f1b763e543ad2eb2bf4a9720eaf552bb656eace362fce7eed"
+		},
+		{
+			"account": "cfxtest:aantkr57nnf63e6c1up7z7cm70g4fp3x9j3t0z9dab",
+			"publicKey": "0x902c9a8744496f5df1537cd5f454bfe49a809da51c123adc506939834508205ea81b8a083022fd5a3562a9e33f220d3df6e6a772c799a79b7f80e770b40f3e88",
+			"privateKey": "0x23bc01151141830e8bf25389ec2b54bcf795a739c4a504fe1c65ef90ff0a3199"
+		},
+		{
+			"account": "cfxtest:aam399e7ww6vps0cz01xrtcy7j687h3zeptn13dcts",
+			"publicKey": "0x7771ecd6ff5430a8d46ccb9ee56894f3415b316e447e445aab884754c953181a0f0255f7732265c6763a160ba7162615ee972af5e8e2280b954d5651cc536336",
+			"privateKey": "0x6b13c6ce8d989da76ced212af93c6abe91b312d1bf586fff655a1830d9e66fea"
+		},
+		{
+			"account": "cfxtest:aajg434egc1hmfkg1b06yu6czsyu7vscjyta0fks5m",
+			"publicKey": "0xb0b35868a6bbe840677ea5bf6ea7dbd56a80b1ab2ddb2e940a05d82eca42d46f3e6d01c1833d802e0e0b9c0b0e9e1e6a275c5070b3435393e8283f7050036df5",
+			"privateKey": "0x71278b1a343aa869e26d205375060bd2c9c97e574430b588748ce7e43afd234f"
+		},
+		{
+			"account": "cfxtest:aang0eg32d1jzgkfgef171zgxbbfeupb7udt7tb4hh",
+			"publicKey": "0x193dc8332ac2c60f73a84e3676e693a27071d00eacccfca0bd0bcdaffc954797970f7e77ce1313133c4bd959ad0cfacf979517fe198c6748b0fd20fed28b0772",
+			"privateKey": "0x7af03c7f0742b71e664af22b61c4fd09c92dc4a521c178a1664a3c743c85aef4"
+		}
+	]
+}

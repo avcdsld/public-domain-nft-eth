@@ -6,6 +6,8 @@ const BN = require('bn.js'); // Required for injected code
 
 ///+import
 
+const axios = require('axios').default;
+
 module.exports = class DappLib {
 
   /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NFT: COMPOSER  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -303,6 +305,76 @@ module.exports = class DappLib {
     return {
       type: DappLib.DAPP_RESULT_TX_HASH,
       label: "Transaction Hash",
+      result: DappLib.getTransactionHash(result.callData)
+    };
+  }
+
+  static async getIDs(data) {
+    let result = await Blockchain.get(
+      {
+        config: DappLib.getConfig(),
+        contract: DappLib.DAPP_STATE_CONTRACT,
+        params: {
+          from: data.account,
+        },
+      },
+      "tokenIDs",
+      data.account
+    );
+    let tokenIDs = result.callData;
+    return {
+      type: DappLib.DAPP_RESULT_STRING,
+      label: "Result is",
+      result: result.callData,
+      hint: null,
+    };
+  }
+
+  static async mintPublicDomainNFT(data) {
+    // Fetch the art info from The Metropolitan Museum of Art
+    //
+    const regex = /www.metmuseum.org\/art\/collection\/search\/(\d+)/;
+    if (!regex.test(data.url)) {
+        console.log('Error!');
+        throw new Error('Enter a URL of Open Access Collection at Metropolitan Museum of Art. Search site: https://www.metmuseum.org/art/collection/search#!?showOnly=highlights%7CopenAccess');
+    }
+
+    const externalUrl = data.url.split('?').shift(); // delete query params
+    const objectId = externalUrl.match(regex)[1];
+    const metadataUrl = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`;
+    const originalMetadata = (await axios.get(metadataUrl)).data;
+    console.log({originalMetadata});
+    if (!originalMetadata.isPublicDomain) {
+        throw new Error('This art work is not for public domain');
+    }
+
+    // const metadata = [
+    //     { key: 'metadataUrl', value: metadataUrl },
+    //     { key: 'title', value: originalMetadata.title || '' },
+    //     { key: 'artistDisplayName', value: originalMetadata.artistDisplayName || '' },
+    //     { key: 'objectDate', value: originalMetadata.objectDate || '' },
+    //     { key: 'imageUrl', value: originalMetadata.primaryImageSmall || originalMetadata.primaryImage || '' },
+    //     { key: 'externalUrl', value: externalUrl }
+    // ];
+
+    let result = await Blockchain.post(
+      {
+        config: DappLib.getConfig(),
+        contract: DappLib.DAPP_STATE_CONTRACT,
+        params: {
+          from: data.authorized,
+        },
+      },
+      "mintPublicDomainNFT",
+      data.account,
+      objectId, // data.id,
+      1, // data.amount,
+      "" // data.data
+    );
+    return {
+      type: DappLib.DAPP_RESULT_TX_HASH,
+      label: "Transaction Hash",
+      raw: result.callData,
       result: DappLib.getTransactionHash(result.callData)
     };
   }

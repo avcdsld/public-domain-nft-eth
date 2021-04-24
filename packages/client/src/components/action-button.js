@@ -43,8 +43,8 @@ export default class ActionButton extends LitElement {
       <button
         @click=${this.clickHandler}
         class="text-white font-bold py-2 px-8 rounded ${this.method === "post"
-          ? "bg-orange-500 hover:bg-orange-700"
-          : "bg-green-500 hover:bg-green-700"}"
+          ? "bg-orange-400 hover:bg-orange-500"
+          : "bg-green-400 hover:bg-green-500"}"
       >
         ${(this.text ? this.text : (this.method === "post" ? "Submit" : "View")).toUpperCase()}
       </button>
@@ -88,7 +88,7 @@ export default class ActionButton extends LitElement {
       }
       let retVal = {
         type: DappLib.DAPP_RESULT_ERROR,
-        label: "Error Message",
+        label: "",
         result: e
       };
       let resultNode = DappLib.getFormattedResultNode(retVal);
